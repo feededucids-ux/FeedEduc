@@ -1,0 +1,285 @@
+:root{
+	--bg:#1a1a1a;
+	--card:#2d2d2d;
+	--accent-1:#c675dc; /* roxo solicitado */
+	--accent-2:#007a7e; /* verde-azulado solicitado */
+	--bg-gradient: linear-gradient(135deg, rgba(198,117,220,0.1), rgba(0,122,126,0.1));
+	--muted:#a0a0a0;
+	--success:#2aa876;
+	--danger:#e55353;
+	--radius:10px;
+	--max-width:960px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Segoe UI, system-ui, -apple-system, 'Helvetica Neue', Arial;
+	background: var(--bg-gradient), var(--bg);
+	color:#e0e0e0;
+	-webkit-font-smoothing:antialiased;
+}
+.container{
+	max-width:var(--max-width);
+	margin:0 auto;
+	padding:20px;
+}
+.site-header{background:linear-gradient(90deg,var(--accent-2),var(--accent-1));color:#fff;padding:28px 0}
+.title-area h1{margin:0;font-size:24px}
+.subtitle{margin:2px 0 0;color:rgba(230,238,252,0.9)}
+.header-inner{display:flex;align-items:center;gap:20px}
+.logo-area{width:110px;height:110px;border-radius:12px;background:transparent;display:flex;align-items:center;justify-content:center;overflow:hidden;border:none}
+.logo-area img{width:100%;height:100%;object-fit:contain;background:transparent}
+.title-area h1{margin:0;font-size:24px}
+.subtitle{margin:2px 0 0;color:#e6eefc}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;margin:18px 0;box-shadow:0 6px 18px rgba(13,27,62,0.06)}
+h2{margin-top:0}
+ul,ol{margin:8px 0 0 20px}
+
+/* Form styles */
+label{display:block;margin-top:12px;margin-bottom:6px;font-weight:600}
+input[type="text"],select,textarea{width:100%;padding:10px;border:1px solid #e6e9ef;border-radius:8px;font-size:14px}
+.form-actions{margin-top:14px}
+.form-actions{margin-top:14px}
+/* Botões de exemplo (estáticos) */
+.btn-primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;border:none;padding:8px 12px;border-radius:8px;font-weight:700;cursor:default}
+.btn-outline{border:2px solid var(--accent-2);color:var(--accent-2);background:transparent;padding:6px 10px;border-radius:8px}
+.hidden{display:none}
+
+/* Footer */
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* Responsive */
+@media (max-width:600px){
+	.header-inner{flex-direction:row;gap:12px}
+	.logo-area{width:88px;height:88px;border-radius:10px}
+	.container{padding:14px}
+}
+
+/* Regras que aplicam a paleta do projeto em todo o site */
+h1, h2, h3 {
+	color: var(--accent-2);
+}
+
+/* Mantém contraste no header (texto branco sobre gradiente) */
+.site-header h1, .site-header .subtitle {
+	color: #fff;
+}
+
+/* Títulos dentro dos cards usam cor roxa */
+.card h2,
+.card h3 {
+	color: var(--accent-1);
+}
+
+/* Layout para duplas de cards (texto e imagem lado a lado) */
+.cards-row {
+	display: flex;
+	gap: 20px;
+	align-items: stretch;
+	margin: 18px 0;
+}
+
+.cards-row .card {
+	flex: 1;
+	margin: 0;
+}
+
+.card-text {
+	width: 55%;
+	margin-right: auto;
+}
+
+.card-image-card {
+	width: 40%;
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	overflow: hidden;
+}
+
+.card-image-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: var(--radius);
+}
+
+/* Alternância para cards com imagem na frente */
+.cards-row.reverse {
+	flex-direction: row-reverse;
+}
+
+.cards-row.reverse .card-text {
+	width: 55%;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.cards-row.reverse .card-image-card {
+	width: 40%;
+	margin-left: 0;
+	margin-right: auto;
+}
+
+@media (max-width: 768px) {
+	.cards-row {
+		flex-direction: column;
+	}
+	
+	.card-text,
+	.card-image-card {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+a {
+	color: var(--accent-2);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.logo-area {
+	background: transparent;
+	border: none;
+}
+
+.card {
+	border: 1px solid rgba(0,122,126,0.06);
+	box-shadow: 0 10px 30px rgba(198,117,220,0.05);
+}
+
+.note {
+	color: var(--accent-2);
+}
+
+.site-footer {
+	color: var(--accent-2);
+}
+
+/* Card de Preço */
+.pricing-card {
+	text-align: center;
+	background: linear-gradient(135deg, rgba(198,117,220,0.15), rgba(0,122,126,0.15));
+	border: 2px solid var(--accent-1);
+}
+
+.pricing-card h2 {
+	margin-bottom: 20px;
+}
+
+.price-value {
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 4px;
+	margin: 20px 0;
+	font-size: 48px;
+	font-weight: 700;
+	color: var(--accent-1);
+}
+
+.price-value .currency {
+	font-size: 32px;
+	vertical-align: baseline;
+}
+
+.price-value .amount {
+	font-size: 56px;
+	line-height: 1;
+}
+
+.price-value .decimal {
+	font-size: 32px;
+	vertical-align: baseline;
+}
+
+.pricing-description {
+	color: var(--muted);
+	font-size: 14px;
+	margin-top: 16px;
+	line-height: 1.6;
+}
+
+/* Animações de Fade-In */
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeInBottom {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInTop {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Aplicação intercalada de animações ao scroll */
+.card:not(.card-text):not(.card-image-card) {
+	opacity: 0;
+}
+
+.card:not(.card-text):not(.card-image-card):nth-of-type(odd) {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.card:not(.card-text):not(.card-image-card):nth-of-type(even) {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.card.animate:nth-of-type(1) {
+	animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.card.animate:nth-of-type(2) {
+	animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.card.animate:nth-of-type(3) {
+	animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.card.animate:nth-of-type(4) {
+	animation: fadeInRight 0.8s ease-out forwards;
+}
+
+
